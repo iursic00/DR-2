@@ -1,40 +1,42 @@
 ﻿<Window x:Class="DomacRad.MainWindow" Loaded="Window_Loaded"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525" WindowStyle="SingleBorderWindow">
-    <Grid ShowGridLines="True">
+        xmlns:controls ="clr-namespace:DomacRad.Controls"
+        Title="Ivan Uršić - DR2" Height="400" Width="525" WindowStyle="SingleBorderWindow" MaxWidth="600">
+    <Grid ShowGridLines="True" Background="Aqua">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="40"></RowDefinition>
-            <RowDefinition Height="70"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="10*" MaxHeight="60"></RowDefinition>
+            <RowDefinition Height="30*" MaxHeight="120"></RowDefinition>
+            <RowDefinition Height="60*"></RowDefinition>
         </Grid.RowDefinitions>
 
         <StackPanel  Grid.Column="1" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5" >
             <Button Height="25" Width="70" x:Name="left_button" Background="Gray" Foreground="White">Dodaj L</Button>
             <Button Height="25" Width="70" x:Name="right_button" Background="Gray" Foreground="White">Dodaj R</Button>
         </StackPanel>
-        <Rectangle Grid.Row="1" Grid.Column="0" Height="60" Width="80" VerticalAlignment="Top" Fill="Blue"> </Rectangle>
+        <StackPanel  Grid.Column="0" Grid.Row="1">
+            <controls:MediaItem  Margin="15" Text="Ivan Ursic" ImagePath="/Resources/Images/user.png" ></controls:MediaItem>
+        </StackPanel>
+       
         <TextBox Grid.Column="1" Grid.Row="1" Height="40" Width="375" HorizontalAlignment="Center" x:Name="textBox1" VerticalAlignment="Center" Text="Search" FontSize="15" VerticalContentAlignment="Center" BorderBrush="Gray" />
             <ScrollViewer Grid.Row="3" Grid.Column="0">
                 <StackPanel x:Name="quadratContainer">
-                <Rectangle Width="70" Height="70" Fill="Orange" Margin="5"></Rectangle>
-                <Rectangle Width="70" Height="70" Fill="Orange" Margin="5"></Rectangle>
-                <Rectangle Width="70" Height="70" Fill="Orange" Margin="5"></Rectangle>
-                <Rectangle Width="70" Height="70" Fill="Orange" Margin="5"></Rectangle>
+                <controls:MediaItem Text="Friend 1" ImagePath="/Resources/Images/user.png" Margin="10"></controls:MediaItem>
+                <controls:MediaItem Text="Friend 2" ImagePath="/Resources/Images/user.png" Margin="10"></controls:MediaItem>
+                <controls:MediaItem Text="Friend 3" ImagePath="/Resources/Images/user.png" Margin="10"></controls:MediaItem>
+                <controls:MediaItem Text="Friend 4" ImagePath="/Resources/Images/user.png" Margin="10"></controls:MediaItem>
                 </StackPanel>
             </ScrollViewer>
         <ScrollViewer Grid.Column="1" Grid.Row="3">
             <StackPanel x:Name="rectangleContainer">
-                <Rectangle Width="360" Height="40" Fill="Red" Margin="5"></Rectangle>
-                <Rectangle Width="360" Height="40" Fill="Red" Margin="5"></Rectangle>
-                <Rectangle Width="360" Height="40" Fill="Red" Margin="5"></Rectangle>
-                <Rectangle Width="360" Height="40" Fill="Red" Margin="5"></Rectangle>
-                <Rectangle Width="360" Height="40" Fill="Red" Margin="5"></Rectangle>
-                <Rectangle Width="360" Height="40" Fill="Red" Margin="5"></Rectangle>
+                <controls:PostItem></controls:PostItem>
+                <controls:PostItem></controls:PostItem>
+                <controls:PostItem></controls:PostItem>
+                <controls:PostItem></controls:PostItem>
             </StackPanel>
             
         </ScrollViewer>
